@@ -89,6 +89,7 @@ if (length(categorical_features) > 0 && file.exists(OHE_ENCODER_FILE)) {
 # Load the column name mapping
 colname_mapping <- read.csv(COLNAME_MAPPING)
 # Update the column names based on the mapping
+df <- df[, colname_mapping$original]
 colnames(df) <- colname_mapping$sanitized[match(colnames(df), colname_mapping$original)]
 
 # Convert test data to xgb.DMatrix format

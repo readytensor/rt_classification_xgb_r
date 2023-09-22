@@ -168,7 +168,6 @@ write.csv(colname_mapping, COLNAME_MAPPING, row.names = FALSE)
 # apply new column names to df
 colnames(df) <- new_colnames
 
-
 # Label encoding target feature
 levels_target <- levels(factor(target))
 encoded_target <- as.integer(factor(target, levels = levels_target)) - 1
